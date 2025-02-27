@@ -3,11 +3,41 @@
 
 }
 
-.nav-link {
-    text-decoration: none;
-    color: rgb(0, 0, 0) !important;
+section {
+    overflow: hidden;
 }
 
+.nav-link {
+    color: black !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.568);
+}
+
+.navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out; 
+    background-color: white;
+    height: 70px;
+}
+
+
+.navbar.scrolled {
+    background-color: #fffffffd; 
+    padding: 10px 0;  
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
 .quite {
     font-family: "Permanent Marker", serif;
     font-weight: 300;
@@ -29,7 +59,6 @@
     padding-bottom: 60px;
 
 }
-
 .section4 {
     background-color: #1A1A1A;
 }
@@ -37,44 +66,68 @@
 .p12 {
     text-align: justify;
 }
+.carousel-caption h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 900;
+}
+
+.carousel-item img {
+    object-fit: cover;
+  
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
 
 @media (max-width: 768px) {
-    .carousel-caption h2 {
+    .carousel-caption {
+        top: 25%;
+        margin-left: 5px;
+        text-align: center;
+    }
+
+    h2 {
         font-size: 20px;
     }
 
-    .carousel-caption p {
+    p {
         font-size: 12px;
     }
+
 
     .navbar-collapse {
         position: absolute;
         top: 0;
-        left: -100%;
-        width: 75%;
-        background-color: white;
-        transition: left 0.3s ease;
+        left: -100%; 
+        width: 75%; 
+        background-color: white; 
+        transition: left 0.3s ease; 
         z-index: 1050;
+        margin-top:20px;
+        border-radius: 5px;
     }
-
+    
     .navbar-collapse.show {
-        left: 0;
+        left: 0; 
     }
 
     .navbar-nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
-        margin-top: 50px;
+        align-items: flex-start; 
+        margin-top: 50px; 
         opacity: 0;
         transform: translateX(-100%);
-        transition: transform 0.2s ease, opacity 0.2s ease 0.1s;
+        transition: transform 0.2s ease , opacity 0.2s ease 0.1s;
     }
 
     .navbar-collapse.show .navbar-nav {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0); 
     }
 
     .navbar-nav .nav-link {
@@ -84,39 +137,10 @@
         text-align: left;
     }
 
-    .carousel-caption {
-        position: absolute;
-        margin-top: 20px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        width: 100%;
-        padding: 20px;
-    }
-
+    
 }
 
-.carousel-caption h2 {
-    font-family: 'Permanent Marker', cursive;
-    font-weight: 100;
-}
 
-.carousel-item img {
-    object-fit: cover;
-}
-
-.carousel-caption {
-    position: absolute;
-    top: 40%;
-    text-align: center;
-    color: white;
-    padding: 20px;
-}
-
-.carousel-item {
-    background-size: cover;
-
-}
 
 .img-fluid {
     max-width: 100%;
@@ -169,10 +193,6 @@
 ::-webkit-scrollbar-thumb {
     background: rgb(26, 90, 0);
     border-radius: 10px;
-}
-
-p {
-    font-size: 16px;
 }
 
 body {
