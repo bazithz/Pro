@@ -9,7 +9,6 @@ section {
 .nav-link {
     color: black !important;
     text-decoration: none;
-    font-weight: bold;
 }
 .navbar-toggler {
     margin-right: 20px;
