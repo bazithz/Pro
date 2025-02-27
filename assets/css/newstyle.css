@@ -8,8 +8,9 @@ section {
 
 .nav-link {
     color: black !important;
-    text-decoration: none;
+    text-decoration: none;    
 }
+
 .navbar-toggler {
     margin-right: 20px;
     background-color: rgba(255, 255, 255, 0.568);
