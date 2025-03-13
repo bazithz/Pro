@@ -260,6 +260,69 @@
             }
         });
     </script>
+     <script>
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault();  
+  
+
+          var fullname = document.getElementById('fullname');
+          var email = document.getElementById('email');
+          var phone = document.getElementById('phone');
+          var subject = document.getElementById('subject');
+          var message = document.getElementById('message');
+  
+
+          var formValid = true;
+  
+
+          var errorElements = document.querySelectorAll('.error-message');
+          errorElements.forEach(function(error) {
+              error.remove();
+          });
+  
+
+          if (fullname.value.trim() === "") {
+              formValid = false;
+              showError(fullname, "Name is required.");
+          }
+  
+
+          if (email.value.trim() === "") {
+              formValid = false;
+              showError(email, "Email is required.");
+          } else if (!validateEmail(email.value.trim())) {
+              formValid = false;
+              showError(email, "Please enter a valid email.");
+          }
+  
+          if (subject.value.trim() === "") {
+              formValid = false;
+              showError(subject, "Subject is required.");
+          }
+  
+          if (message.value.trim() === "") {
+              formValid = false;
+              showError(message, "Message is required.");
+          }
+  
+          if (formValid) {
+              this.submit();  
+          }
+      });
+  
+      function showError(inputElement, message) {
+          var error = document.createElement('div');
+          error.classList.add('error-message', 'text-danger');
+          error.textContent = message;
+          inputElement.classList.add('is-invalid');
+          inputElement.parentNode.appendChild(error);
+      }
+  
+      function validateEmail(email) {
+          var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          return re.test(email);
+      }
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
